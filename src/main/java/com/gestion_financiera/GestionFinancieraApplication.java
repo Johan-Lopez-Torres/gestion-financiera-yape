@@ -1,4 +1,4 @@
-package com.producto_apps.gestion_financiera;
+package com.gestion_financiera;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
