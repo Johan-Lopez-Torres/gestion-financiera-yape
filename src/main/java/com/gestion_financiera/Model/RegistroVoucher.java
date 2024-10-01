@@ -21,7 +21,6 @@ public class RegistroVoucher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(length = 20)
     private String nombre;
 
@@ -53,13 +52,15 @@ public class RegistroVoucher {
     @Column(length = 20)
     private BigDecimal monto;
 
+    @Column(length = 20)
     @Enumerated(EnumType.STRING)
-    private TipoServicio tipoServicio;
-
+    private Tipo_Servicio tipoServicio;
 
     @Column(length = 20)
-    private String metodoPago;
+    @Enumerated(EnumType.STRING)
+    private Metodo_pago metodoPago;
 
+    @Column(length = 20)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaPago;
@@ -67,15 +68,8 @@ public class RegistroVoucher {
     @Column(length = 20)
     private String imagen;
 
-    public enum Procedencia {
-        ESTUDIANTE_UNS,
-        TRABAJADOR,
-        PUBLICO_EN_GENERAL
-    }
 
-    public enum TipoServicio {
-        CERTIFICACION,
-        CURSO
-    }
+
+
 
 }

@@ -17,7 +17,6 @@ public class Validacionvochure {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(length = 20)
     private String nombre;
 
@@ -37,10 +36,11 @@ public class Validacionvochure {
     private BigDecimal monto;
 
     @Enumerated(EnumType.STRING)
-    private TipoServicio tipoServicio;
+    private Tipo_Servicio tipoServicio;
 
     @Column(length = 20)
-    private String metodoPago;
+    @Enumerated(EnumType.STRING)
+    private Metodo_pago metodoPago;
 
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -49,15 +49,8 @@ public class Validacionvochure {
     @Column(length = 20)
     private String imagen;
 
-    public enum Procedencia {
-        ESTUDIANTE_UNS,
-        TRABAJADOR,
-        PUBLICO_EN_GENERAL
-    }
 
-    public enum TipoServicio {
-        CERTIFICACION,
-        CURSO
-    }
+
+
 
 }

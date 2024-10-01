@@ -24,11 +24,7 @@ public class User {
     @Column(length = 30)
     @Enumerated(EnumType.STRING)
     private Roles rol;
-    public enum Roles {
-        ADMINISTRADOR,
-        SECRETARIA,
-        USUARIO
-    }
+
 
 
 }
