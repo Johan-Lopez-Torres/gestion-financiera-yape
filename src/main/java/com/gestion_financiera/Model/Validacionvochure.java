@@ -1,22 +1,18 @@
 package com.gestion_financiera.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
-
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "Registro")
-public class RegistroVoucher {
+@Table(name = "validacionVouc")
+public class Validacionvochure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,20 +24,8 @@ public class RegistroVoucher {
     @Column(length = 40)
     private String apellido;
 
-    @Column(length = 40)
-    private String correo;
-
-    @Column(length = 3)
-    private int edad;
-
-    @Column(length = 50)
-    private String direccion;
-
     @Column(length = 8)
     private String dni;
-
-    @Enumerated(EnumType.STRING)
-    private Procedencia procedencia;
 
     @Column(length = 20)
     private LocalTime horaOperacion;
@@ -49,13 +33,11 @@ public class RegistroVoucher {
     @Column(length = 20)
     private String numOperacion;
 
-
     @Column(length = 20)
     private BigDecimal monto;
 
     @Enumerated(EnumType.STRING)
     private TipoServicio tipoServicio;
-
 
     @Column(length = 20)
     private String metodoPago;
